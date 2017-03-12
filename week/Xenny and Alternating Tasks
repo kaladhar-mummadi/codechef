@@ -1,0 +1,31 @@
+t = int(input())
+
+for _ in range(t):
+    N = int(input())
+    A = [int(i) for i in input().split(" ")]
+    B = [int(i) for i in input().split(" ")]
+    first_A = 0
+    first_B = 0
+    toggle = True
+    for i in range(N):
+        if toggle:
+            first_A += A[i]
+            first_B += B[i]
+            toggle = False
+        else:
+            first_A += B[i]
+            first_B += A[i]
+            toggle = True
+    toggle = False
+    # for i in range(N):
+    #     if toggle:
+    #         first_B += A[i]
+    #         toggle = False
+    #
+    #     else:
+    #         first_B += B[i]
+    #         toggle = True
+    if first_A < first_B:
+        print(first_A)
+    else:
+        print(first_B)
